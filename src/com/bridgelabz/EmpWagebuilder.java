@@ -20,21 +20,28 @@ public class EmpWagebuilder {
 		int emp_hr = 0;
 		int day = 0;
 	
-			
-			
-		int emp_check = (int) Math.floor(Math.random() * 10) % 3;
-		switch(emp_check) {
-		case 1:
-			emp_hr = 4;
-			break;
-		case 2:
-			emp_hr = 8;
-			break;
-			default:
+		while (total_working_hrs < MAX_HRS && day < MAX_WORKING_DAYS ) {
+			day++;
+			double attendance = Math.floor(Math.random() * 10) % 3;
+			switch ((int)attendance) {
+			case IS_FULL_TIME ->{
+				emp_hr = FULL_TIME;
+				break;
+			}
+			case IS_PART_TIME ->{
+				emp_hr = PART_TIME;
+				break;
+			}
+			default ->{
 				emp_hr = 0;
 				break;
+			}
 		}
-				wage_per_month = emp_hr * WAGE_PER_HR;
-				System.out.println("Employee Wage: "+ wage_per_month);
+		total_working_hrs += emp_hr;
+		wage_per_month += WAGE_PER_HR*emp_hr;
 		}
+		
+		System.out.println("Wage per month = " +wage_per_month);
 	}
+		
+}
