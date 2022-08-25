@@ -40,7 +40,8 @@ public class EmpWagebuilder {
 		total_working_hrs += emp_hr;
 		wage_per_month += WAGE_PER_HR*emp_hr;
 		}
-		
+		System.out.println("No of days = " +day);
+		System.out.println("No of hrs = " +total_working_hrs);
 		System.out.println("Wage per month = " +wage_per_month);
 	}
 		
