@@ -22,21 +22,19 @@ public class EmpWagebuilder {
 	
 			
 			
-		double emp_check = Math.floor(Math.random() * 10) % 3;
-		if (emp_check == IS_PART_TIME) {
+		int emp_check = (int) Math.floor(Math.random() * 10) % 3;
+		switch(emp_check) {
+		case 1:
 			emp_hr = 4;
-			wage_per_month = emp_hr * WAGE_PER_HR;
-		System.out.println("Part time Employee Wage: " + wage_per_month);
-		}
-		else if (emp_check == IS_FULL_TIME) {
+			break;
+		case 2:
 			emp_hr = 8;
-			wage_per_month = emp_hr * WAGE_PER_HR;
-		System.out.println("Full time Employee Wage: " + wage_per_month);
+			break;
+			default:
+				emp_hr = 0;
+				break;
 		}
-		else {
-			emp_hr = 0;
-		wage_per_month = emp_hr * WAGE_PER_HR;
-		System.out.println("Employee Wage: " + wage_per_month);
+				wage_per_month = emp_hr * WAGE_PER_HR;
+				System.out.println("Employee Wage: "+ wage_per_month);
 		}
 	}
-}
