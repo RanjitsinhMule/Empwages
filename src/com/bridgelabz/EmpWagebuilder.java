@@ -20,11 +20,14 @@ public class EmpWagebuilder {
 		int emp_hr = 0;
 		int day = 0;
 	
+			
+			
 			double emp_check = Math.floor(Math.random() * 10) % 2;
 			if (emp_check == IS_FULL_TIME)
-				System.out.println("Employee is Present");
+				emp_hr = 8;
 			else
-				System.out.println("Employee is Absent");
-		
+				emp_hr = 0;
+			wage_per_month = emp_hr * WAGE_PER_HR;
+			System.out.println("Full time Employee Wage: " + wage_per_month);
 		}
 }
